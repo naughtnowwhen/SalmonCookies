@@ -4,15 +4,27 @@
 // Capitol Hill	20	38	2.3
 // Alki	2	16	4.6
 
-var pike = {
-    minCustomer : 23,
-    maxCustomer : 65,
-    avgEat : 6.3,
+
+//Do i define these vars globally or inside the object?
+// var minEstimate = 23;
+
+
+var pikeLocation = {
+  minCustomer : 23,
+  maxCustomer : 65,
+  avgEat : 6.3,
+  //   pikeRandomCustAmount : function (minCustomer, maxCustomer){
+  //     return Math.round(Math.random() * (maxCustomer - minCustomer)
+  //      + minCustomer);
+  //   },
+  //   pikeRandomCustAmount(23,75);
+
+  pikeRandomCustAmount : function (){
+    return Math.round(Math.random() * (this.maxCustomer - this.minCustomer)
+     + this.minCustomer);
+  },
+  totalSalmonCookiespurchased : this.pikeRandomCustAmount() * this.avgEat,
 };
 
-var pikeRand = function pikeRandom (min, max){
-    // we want to be able to pass the lower and upper bounds into our function so that random number that's returned is between our bounds.
-   return Math.random() * (max - min)) + min;
-}
+pikeLocation.pikeRandomCustAmount();
 
-pikeRandom(23,75);
