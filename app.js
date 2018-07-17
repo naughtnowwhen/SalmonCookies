@@ -10,21 +10,48 @@
 
 
 var pikeLocation = {
-  minCustomer : 23,
-  maxCustomer : 65,
-  avgEat : 6.3,
-  //   pikeRandomCustAmount : function (minCustomer, maxCustomer){
-  //     return Math.round(Math.random() * (maxCustomer - minCustomer)
-  //      + minCustomer);
-  //   },
-  //   pikeRandomCustAmount(23,75);
+  minCustomer: 23,
+  maxCustomer: 65,
+  avgEat: 6.3,
 
-  pikeRandomCustAmount : function (){
-    return Math.round(Math.random() * (this.maxCustomer - this.minCustomer)
+  pikeCustomerPerHour : [],
+  pikeCookieAmountPerHour : [],
+  pikeCookieTotal : [],
+
+  pikeRandomCustAmount: function (){
+    return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)
      + this.minCustomer);
   },
-  totalSalmonCookiespurchased : this.pikeRandomCustAmount() * this.avgEat,
 };
 
-pikeLocation.pikeRandomCustAmount();
 
+for (var i = 0; i < 14; i++) {
+  pikeLocation.pikeCustomerPerHour.push(pikeLocation.pikeRandomCustAmount()) &&
+  pikeLocation.pikeCookieAmountPerHour.push(Math.floor(pikeLocation.pikeRandomCustAmount() * pikeLocation.avgEat)) && pikeLocation.pikeCookieTotal.push(pikeLocation.pikeCookieAmountPerHour[i]);
+}
+
+
+// for (var j = 0; j < 14; j++) {
+//   pikeLocation.pikeCookieAmountPerHour.push(Math.floor(pikeLocation.pikeRandomCustAmount() * pikeLocation.avgEat))
+// }
+
+
+
+
+// for (var j = 0; j < pikeLocation.pikeCookieAmountPerHour; j++) {
+//   pikeLocation.pikeTime[j] * pikeLocation.avgEat;
+// }
+
+
+
+
+
+// var pikeRandomCustAmount = function (minCustomer, maxCustomer){
+//   return Math.floor(Math.random() * (maxCustomer - minCustomer)
+//      + minCustomer);
+// };
+// var minCustomer = 23;
+// var maxCustomer =  65;
+
+// var x = 12;
+// pikeRandomCustAmount
