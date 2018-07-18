@@ -18,8 +18,11 @@ var StorePool = [('1st and Pike', 23, 65, 6.3),
   ('Alki', 2, 16, 4.6)];
 
 for (i = 0; i < StorePool.length; i ++)
-  console.log(StorePool[i]);
+  var reader = (StorePool[0]);
+console.log(reader);
 
+alert('does this work')
+;
 
 
 
