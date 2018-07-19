@@ -1,100 +1,70 @@
+
 'use strict';
 
-// 1st and Pike	23	65	6.3
-// SeaTac Airport	3	24	1.2
-// Seattle Center	11	38	3.7
-// Capitol Hill	20	38	2.3
-// Alki	2	16	4.6
+// var tbEl;
 
+// what about storing inside an object instead?
+var StoreArray = [];
 
-//Do i define these vars globally or inside the object?
-// var minEstimate = 23;
-var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
+var hours = ['5am','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm','3pm','4pm','5pm', '6pm','7pm', '8pm', '9pm'];
 
-var StorePool = [('1st and Pike', 23, 65, 6.3),
-  ('SeaTac Airport', 3, 24, 1.2),
-  ('Seattle Center', 11, 38, 3.7),
-  ('Capitol Hill', 20, 38, 2.3),
-  ('Alki', 2, 16, 4.6)];
+let x = 0;
+console.log(x);
 
-for (i = 0; i < StorePool.length; i ++)
-  var reader = (StorePool[0]);
-console.log(reader);
-
-alert('does this work')
-;
-
-
-
-var pikeLocation = {
-  minCustomer: 23,
-  maxCustomer: 65,
-  avgEat: 6.3,
-
-  pikeCustomerPerHour : [],
-  pikeCookieAmountPerHour : [],
-  pikeCookieTotal : [],
-
-  pikeRandomCustAmount: function (){
-    return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer)
-     + this.minCustomer);
-  },
-};
-
-
-for (var i = 0; i < 14; i++) {
-  pikeLocation.pikeCustomerPerHour.push(pikeLocation.pikeRandomCustAmount()) &&
-  pikeLocation.pikeCookieAmountPerHour.push(Math.floor(pikeLocation.pikeRandomCustAmount() * pikeLocation.avgEat)) && pikeLocation.pikeCookieTotal.push(pikeLocation.pikeCookieAmountPerHour[i]);
+//object constructor... functions hard at work!
+function Store (name, min, max, avgSold){
+//store object's will takes these values being constructed here.
+  this.name = name;
+  this.minCustomers = min;
+  this.maxCustomers = max;
+  this.avgSales = avgSold;
+  this.customersPerHour = [];
+  this.cookiesPerHour = [];
+  this.dailyTotal = 0;
 }
 
-var ulEl = document.createElement('ul');
-for (i = 0; i < 14; i++) {
-  var liEl = document.createElement('li');
-  liEl.textContent = pikeLocation.pikeCustomerPerHour[i];
-  ulEl.appendChild(liEl);
+new Store('first store',20,100,5);
 
-  //example from w3 that works
-  var para = document.createElement('p');
-  var node = document.createTextNode(pikeLocation.pikeCustomerPerHour[i]);
-  para.appendChild(node);
-  var element = document.getElementById('div1');
-  element.appendChild(para);
 
-//
+// what prototypes do we want?
+
+
+// random number generator
+
+// want to be able to inquire about values. What's a good way?
+// set up an empty array that stores the info from Store.Prototype.randomNumberGenerator output
+let RndNumWatcher = [];
+
+
+Store.prototype.randomNumberGenerator = function () {
+let RandAnswer = Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers;    
+  RndNumWatcher.push(RandAnswer); return RandAnswer;
 }
 
-// var ulEl = document.createElement('ul');
+// display RdnNumWatcher output
+console.log(RndNumWatcher);
 
-// for(var i = 0; i < months.length; i++) {
-//   var liEl = document.createElement('li');
-//   liEl.textContent = months[i];
-//   ulEl.appendChild(liEl);
+// customers per hour --- using random generator
+// Store.prototype.customersPerHour = function () {
+// let     
 // }
 
 
 
+// calculate sales
 
-// for (var j = 0; j < 14; j++) {
-//   pikeLocation.pikeCookieAmountPerHour.push(Math.floor(pikeLocation.pikeRandomCustAmount() * pikeLocation.avgEat))
-// }
+// then render
 
+// store row
 
+// header row
 
-
-// for (var j = 0; j < pikeLocation.pikeCookieAmountPerHour; j++) {
-//   pikeLocation.pikeTime[j] * pikeLocation.avgEat;
-// }
+//create stores
 
 
+//create table
+
+//render each store
+// with a for loop through allstores.length
 
 
-
-// var pikeRandomCustAmount = function (minCustomer, maxCustomer){
-//   return Math.floor(Math.random() * (maxCustomer - minCustomer)
-//      + minCustomer);
-// };
-// var minCustomer = 23;
-// var maxCustomer =  65;
-
-// var x = 12;
-// pikeRandomCustAmount
