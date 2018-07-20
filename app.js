@@ -2,6 +2,7 @@
 'use strict';
 
 
+
 // working on event listeners.
 var firstDiv = document.getElementById('firstBodyDiv');
 var CookieQuestion = document.getElementById('ask');
